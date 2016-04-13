@@ -1,0 +1,21 @@
+{
+  "name": "sysadmiral-perconarepo",
+  "version": "1.0.0",
+  "author": "Amo Chumber",
+  "summary": "A module to install the Percona package repos",
+  "license": "Apache-2.0",
+  "source": "https://github.com/sysadmiral/sysadmiral-puppet-perconarepo",
+  "project_page": "https://github.com/sysadmiral/sysadmiral-puppet-perconarepo",
+  "issues_url": "https://github.com/sysadmiral/sysadmiral-puppet-perconarepo/issues",
+  "operatingsystem_support": [
+    { "operatingsystem": "CentOS", "operatingsystemrelease": "7" }
+  ],
+  "dependencies": [
+    { "name":"puppetlabs-stdlib", "version_requirement":">= 1.0.0" }
+  ],
+  "requirements": [
+    { "name": "pe", "version_requirement": ">= 4.0.0" },
+    { "name": "puppet", "version_requirement": ">= 4.0.0" }
+  ],
+  "description": "Setup the Percona package repos on CentOS 7"
+}
