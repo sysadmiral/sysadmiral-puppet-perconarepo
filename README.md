@@ -17,11 +17,13 @@
 Use this module to install the percona yum repo on supported Redhat based machines.
 
 This will import the percona GPG key and then install the percona yum repos. The following repositories are added and enabled by default:
+
 percona-release-basearch
 percona-release-noarch
 percona-release-source
 
 The following repositories are added but disabled by default:
+
 percona-testing-basearch
 percona-testing-noarch
 percona-testing-source
