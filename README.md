@@ -16,20 +16,20 @@
 
 Use this module to install the percona yum repo on supported Redhat based machines.
 
-This will import the percona GPG key and then install the percona yum repos. The following repositories are added and enabled by default:
+This will import the percona GPG key and then install the percona yum repos. The following repositories are added and _enabled_ by default:
 
-percona-release-basearch
-percona-release-noarch
-percona-release-source
+* percona-release-basearch
+* percona-release-noarch
+* percona-release-source
 
-The following repositories are added but disabled by default:
+The following repositories are added but _disabled_ by default:
 
-percona-testing-basearch
-percona-testing-noarch
-percona-testing-source
-percona-experimental-basearch
-percona-experimental-noarch
-percona-experimental-source
+* percona-testing-basearch
+* percona-testing-noarch
+* percona-testing-source
+* percona-experimental-basearch
+* percona-experimental-noarch
+* percona-experimental-source
 
 ## Setup
 
@@ -52,10 +52,7 @@ This makes sure your repos are setup before anything tries to use them.
 Add the following to your Puppetfile:
 
 ```puppet
-# Third Party Modules
-mod 'sysadmiral/perconarepo',
-  :git => 'https://github.com/sysadmiral/sysadmiral-puppet-perconarepo.git',
-  :tag => '1.0.0'
+mod 'sysadmiral/perconarepo', '1.0.1'
 ```
 
 ### Proxy
