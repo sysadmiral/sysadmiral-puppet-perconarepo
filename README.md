@@ -1,6 +1,6 @@
 # perconarepo
 
-#### Table of Contents
+## Table of Contents
 
 1. [Description](#description)
 1. [Setup - The basics of getting started with perconarepo](#setup)
@@ -16,7 +16,8 @@
 
 Use this module to install the percona yum repo on supported Redhat based machines.
 
-This will import the percona GPG key and then install the percona yum repos. The following repositories are added and _enabled_ by default:
+This will import the percona GPG key and then install the percona yum repos.
+The following repositories are added and _enabled_ by default:
 
 * percona-release-basearch
 * percona-release-noarch
@@ -57,20 +58,25 @@ mod 'sysadmiral/perconarepo', '1.0.1'
 
 ### Proxy
 
-If you have an http proxy required to access the internet, you can use either a class parameter in the perconarepo class, or edit the $proxy variable in the params.pp file. By default no proxy is assumed.
+If you have an http proxy required to access the internet, you can use either a
+class parameter in the perconarepo class, or edit the $proxy variable in the
+params.pp file. By default no proxy is assumed.
 
 ## Limitations
 
-I have only tested this on CentOS 7 and Debian Jessie (to make sure it didn't get applied).
+I have only tested this on CentOS 7 and Debian Jessie (to make sure it didn't
+get applied).
 
 In theory it should work with any Redhat/RPM/Yum based OS.
 
 ## Development
 
-This module is free for anyone to use and if you spot any improvements please feel free to submit a Pull Request.
+This module is free for anyone to use and if you spot any improvements please
+feel free to submit a Pull Request.
 
-## Release Notes/Contributors/Etc.
+## Release Notes/Contributors/Etc
 
 This is the first module I wrote so I kept it fairly simple.
 
-I took heavy inspiration for this module from https://github.com/stahnma/puppet-module-epel because I found that to be extremely useful.
+I took heavy inspiration for this module from <https://github.com/stahnma/puppet-module-epel>
+because I found that to be extremely useful.
