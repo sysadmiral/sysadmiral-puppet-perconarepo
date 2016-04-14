@@ -1,3 +1,4 @@
+# lint:ignore:80chars lint:ignore:class_inherits_from_params_class
 # Class perconarepo
 #
 # Actions:
@@ -67,98 +68,99 @@ class perconarepo (
   $perconaexperimentalsource_gpgkey      =  $perconarepo::params::perconaexperimentalsource_gpgkey,
 ) inherits perconarepo::params {
 
-  if $facts['osfamily'] == 'RedHat' {
+  if $facts['::osfamily'] == 'RedHat' {
 
     class {'::perconarepo::rpm_gpg_key':
       before => Yumrepo['percona-release-basearch','percona-release-noarch','percona-release-source','percona-testing-basearch','percona-testing-noarch','percona-testing-source','percona-experimental-basearch','percona-experimental-noarch','percona-experimental-source']
     }
 
-    file { "/etc/yum.repos.d/percona-release.repo":
+    file { '/etc/yum.repos.d/percona-release.repo':
       ensure => absent
     }
 
     yumrepo { 'percona-release-basearch':
-	  baseurl => $perconareleasebasearch_baseurl,
-	  proxy => $perconareleasebasearch_proxy,
-	  enabled => $perconareleasebasearch_enabled,
-	  gpgcheck => $perconareleasebasearch_gpgcheck,
-	  gpgkey => $perconareleasebasearch_gpgkey,
-	  descr => $perconareleasebasearch_descr,
+    baseurl  => $perconareleasebasearch_baseurl,
+    proxy    => $perconareleasebasearch_proxy,
+    enabled  => $perconareleasebasearch_enabled,
+    gpgcheck => $perconareleasebasearch_gpgcheck,
+    gpgkey   => $perconareleasebasearch_gpgkey,
+    descr    => $perconareleasebasearch_descr,
     }
 
     yumrepo { 'percona-release-noarch':
-	  baseurl => $perconareleasenoarch_baseurl,
-	  proxy => $perconareleasenoarch_proxy,
-	  enabled => $perconareleasenoarch_enabled,
-	  gpgcheck => $perconareleasenoarch_gpgcheck,
-	  gpgkey => $perconareleasenoarch_gpgkey,
-	  descr => $perconareleasenoarch_descr,
+    baseurl  => $perconareleasenoarch_baseurl,
+    proxy    => $perconareleasenoarch_proxy,
+    enabled  => $perconareleasenoarch_enabled,
+    gpgcheck => $perconareleasenoarch_gpgcheck,
+    gpgkey   => $perconareleasenoarch_gpgkey,
+    descr    => $perconareleasenoarch_descr,
     }
 
     yumrepo { 'percona-release-source':
-	  baseurl => $perconareleasesource_baseurl,
-	  proxy => $perconareleasesource_proxy,
-	  enabled => $perconareleasesource_enabled,
-	  gpgcheck => $perconareleasesource_gpgcheck,
-	  gpgkey => $perconareleasesource_gpgkey,
-	  descr => $perconareleasesource_descr,
+    baseurl  => $perconareleasesource_baseurl,
+    proxy    => $perconareleasesource_proxy,
+    enabled  => $perconareleasesource_enabled,
+    gpgcheck => $perconareleasesource_gpgcheck,
+    gpgkey   => $perconareleasesource_gpgkey,
+    descr    => $perconareleasesource_descr,
     }
 
     yumrepo { 'percona-testing-basearch':
-	  baseurl => $perconatestingbasearch_baseurl,
-	  proxy => $perconatestingbasearch_proxy,
-	  enabled => $perconatestingbasearch_enabled,
-	  gpgcheck => $perconatestingbasearch_gpgcheck,
-	  gpgkey => $perconatestingbasearch_gpgkey,
-	  descr => $perconatestingbasearch_descr,
+    baseurl  => $perconatestingbasearch_baseurl,
+    proxy    => $perconatestingbasearch_proxy,
+    enabled  => $perconatestingbasearch_enabled,
+    gpgcheck => $perconatestingbasearch_gpgcheck,
+    gpgkey   => $perconatestingbasearch_gpgkey,
+    descr    => $perconatestingbasearch_descr,
     }
 
     yumrepo { 'percona-testing-noarch':
-	  baseurl => $perconatestingnoarch_baseurl,
-	  proxy => $perconatestingnoarch_proxy,
-	  enabled => $perconatestingnoarch_enabled,
-	  gpgcheck => $perconatestingnoarch_gpgcheck,
-	  gpgkey => $perconatestingnoarch_gpgkey,
-	  descr => $perconatestingnoarch_descr,
+    baseurl  => $perconatestingnoarch_baseurl,
+    proxy    => $perconatestingnoarch_proxy,
+    enabled  => $perconatestingnoarch_enabled,
+    gpgcheck => $perconatestingnoarch_gpgcheck,
+    gpgkey   => $perconatestingnoarch_gpgkey,
+    descr    => $perconatestingnoarch_descr,
     }
 
     yumrepo { 'percona-testing-source':
-	  baseurl => $perconatestingsource_baseurl,
-	  proxy => $perconatestingsource_proxy,
-	  enabled => $perconatestingsource_enabled,
+    baseurl  => $perconatestingsource_baseurl,
+    proxy    => $perconatestingsource_proxy,
+    enabled  => $perconatestingsource_enabled,
     gpgcheck => $perconatestingsource_gpgcheck,
-	  gpgkey => $perconatestingsource_gpgkey,
-	  descr => $perconatestingsource_descr,
+    gpgkey   => $perconatestingsource_gpgkey,
+    descr    => $perconatestingsource_descr,
     }
 
     yumrepo { 'percona-experimental-basearch':
-	  baseurl => $perconaexperimentalbasearch_baseurl,
-	  proxy => $perconaexperimentalbasearch_proxy,
-	  enabled => $perconaexperimentalbasearch_enabled,
-	  gpgcheck => $perconaexperimentalbasearch_gpgcheck,
-	  gpgkey => $perconaexperimentalbasearch_gpgkey,
-	  descr => $perconaexperimentalbasearch_descr,
+    baseurl  => $perconaexperimentalbasearch_baseurl,
+    proxy    => $perconaexperimentalbasearch_proxy,
+    enabled  => $perconaexperimentalbasearch_enabled,
+    gpgcheck => $perconaexperimentalbasearch_gpgcheck,
+    gpgkey   => $perconaexperimentalbasearch_gpgkey,
+    descr    => $perconaexperimentalbasearch_descr,
     }
 
     yumrepo { 'percona-experimental-noarch':
-	  baseurl => $perconaexperimentalnoarch_baseurl,
-	  proxy => $perconaexperimentalnoarch_proxy,
-	  enabled => $perconaexperimentalnoarch_enabled,
-	  gpgcheck => $perconaexperimentalnoarch_gpgcheck,
-	  gpgkey => $perconaexperimentalnoarch_gpgkey,
-	  descr => $perconaexperimentalnoarch_descr,
+    baseurl  => $perconaexperimentalnoarch_baseurl,
+    proxy    => $perconaexperimentalnoarch_proxy,
+    enabled  => $perconaexperimentalnoarch_enabled,
+    gpgcheck => $perconaexperimentalnoarch_gpgcheck,
+    gpgkey   => $perconaexperimentalnoarch_gpgkey,
+    descr    => $perconaexperimentalnoarch_descr,
     }
 
     yumrepo { 'percona-experimental-source':
-	  baseurl => $perconaexperimentalsource_baseurl,
-	  proxy => $perconaexperimentalsource_proxy,
-	  enabled => $perconaexperimentalsource_enabled,
-	  gpgcheck => $perconaexperimentalsource_gpgcheck,
-	  gpgkey => $perconaexperimentalsource_gpgkey,
-	  descr => $perconaexperimentalsource_descr,
+    baseurl  => $perconaexperimentalsource_baseurl,
+    proxy    => $perconaexperimentalsource_proxy,
+    enabled  => $perconaexperimentalsource_enabled,
+    gpgcheck => $perconaexperimentalsource_gpgcheck,
+    gpgkey   => $perconaexperimentalsource_gpgkey,
+    descr    => $perconaexperimentalsource_descr,
     }
 
   } else {
     notice ("Your operating system ${::operatingsystem} will not have the perconarepo repository applied")
   }
 }
+# lint:endignore
