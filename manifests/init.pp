@@ -68,7 +68,7 @@ class perconarepo (
   $perconaexperimentalsource_gpgkey      =  $perconarepo::params::perconaexperimentalsource_gpgkey,
 ) inherits perconarepo::params {
 
-  if $facts['::osfamily'] == 'RedHat' {
+  if $facts['osfamily'] == 'RedHat' {
 
     class {'::perconarepo::rpm_gpg_key':
       before => Yumrepo['percona-release-basearch','percona-release-noarch','percona-release-source','percona-testing-basearch','percona-testing-noarch','percona-testing-source','percona-experimental-basearch','percona-experimental-noarch','percona-experimental-source']
